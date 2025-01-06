@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  color: #FFFFFF;
+  background: #000000;
+  font-family: "Plus Jakarta Sans", serif;
+  overflow-x: hidden;
+}
+
+.mona-sans {
+  font-family: "Mona Sans", serif;
+}
+
+.ibm {
+  font-family: "IBM Plex Mono", serif;;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.13), rgba(0, 0, 0, 0.267));
+  border-radius: 10px;
+}
