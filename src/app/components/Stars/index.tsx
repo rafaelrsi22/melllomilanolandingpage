@@ -86,7 +86,7 @@ export default function Stars({ numberOfStars }: StarsProps) {
 
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      const forceRadius = 100;
+      const forceRadius = 50;
       const forceStrength = 0.5;
 
       for (let i = 0; i < numberOfStars; i++) {

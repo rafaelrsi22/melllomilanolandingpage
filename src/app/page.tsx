@@ -1,18 +1,20 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Header from "./components/Header";
 import Stars from "./components/Stars";
 import WhiteyButton from "./components/WhiteyButton";
 
-// import { BiLogoPostgresql } from "react-icons/bi";
-// import { FaReact, FaJsSquare } from "react-icons/fa";
-// import { SiRedux } from "react-icons/si";
+import { BiLogoPostgresql } from "react-icons/bi";
+import { FaReact, FaJsSquare, FaGithub } from "react-icons/fa";
+import { SiRedux } from "react-icons/si";
+import { IoLogoFigma } from "react-icons/io5";
+import { DiPython, DiAngularSimple } from "react-icons/di";
+import { motion } from "framer-motion";
 
 export default function Home() {
   const [scale, setScale] = useState(1);
-  const parallaxRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     function handleResize() {
@@ -25,24 +27,11 @@ export default function Home() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  useEffect(() => {
-      const handleScroll = () => {
-        if (!parallaxRef.current) return;
-        const scrollY = window.scrollY || 0;
-        const speed = 0.3;
-
-        parallaxRef.current.style.transform = `translateY(${scrollY * speed}px)`;
-      }
-
-      window.addEventListener("scroll", handleScroll);
-      return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
     <div>
-      <div className="px-24">
+      <div className="px-64">
         <Header />
-        <Stars numberOfStars={2500} />
+        <Stars numberOfStars={4500} />
         <main className="mt-16 z-20 relative">
           <div className="flex flex-col gap-4">
             <h1 className="ibm font-black text-4xl">
@@ -89,7 +78,6 @@ export default function Home() {
       </div>
 
       <div 
-        ref={parallaxRef}
         className="relative mt-24 w-screen h-screen"
       >
         <div
@@ -102,12 +90,12 @@ export default function Home() {
           }}
         >
           <img
-            className="absolute right-[15%] -top-[50%] pointer-events-none"
+            className="absolute right-[15%] -top-[45%] pointer-events-none"
             src="https://upcdn.io/W142ivu/raw/landing-page/small-glow.png"
             alt=""
           />
           <img
-            className="absolute -top-full -right-[4.5%] opacity-80 pointer-events-none"
+            className="absolute -top-[95%] -right-[4.5%] pointer-events-none"
             src="https://upcdn.io/W142ivu/raw/landing-page/glow-ring.png"
             alt=""
           />
@@ -119,7 +107,7 @@ export default function Home() {
         />
         <div className="bg-[#07080D] h-full -mt-2 z-20 relative"></div>
         <div
-          className="absolute top-0 left-0 z-30"
+          className="absolute top-0 left-0 z-30 select-none"
           style={{
             width: "2560px",
             height: "960px",
@@ -127,15 +115,134 @@ export default function Home() {
             transformOrigin: "top left",
           }}
         >
-          <div 
-            className="bg-red-600 w-80 h-32 absolute right-[25%] -top-[35%] z-20"
-          />
+          <div className="w-80 h-32 absolute right-[25%] -top-[20%] z-10">
+            <motion.div
+              initial={{rotate: 12}}
+              whileHover={{ scale: 1.1, y: -80, rotate: 45 }}
+              transition={{ type: "spring", stiffness: 45 }}
+              className="inline-block relative top-6 -left-8 rotate-12 cursor-pointer"
+            >
+              <BiLogoPostgresql size={96} />
+            </motion.div>
+            <motion.div 
+              initial={{rotate: 0}}
+              whileHover={{ scale: 1.1, y: -80, rotate: -34 }}
+              transition={{ type: "spring", stiffness: 80 }}
+              className="inline-block relative top-4 -left-16 cursor-pointer"
+            >
+              <FaReact size={118} />
+            </motion.div>
+            <motion.div 
+              initial={{rotate: 0}}
+              whileHover={{ scale: 1.1, y: -40, rotate: 45 }}
+              transition={{ type: "spring", stiffness: 120 }}
+              className="inline-block relative right-24 -top-6 rotate-3 cursor-pointer"
+            >
+              <SiRedux size={90} />
+            </motion.div>
+            <motion.div
+              initial={{rotate: 0}}
+              whileHover={{ scale: 1.1, y: -125, rotate: -32 }}
+              transition={{ type: "spring", stiffness: 40 }}
+              className="inline-block relative -top-20 left-24 cursor-pointer"
+            >
+              <FaJsSquare size={90} />
+            </motion.div>
+            <motion.div 
+              initial={{rotate: 0}}
+              whileHover={{ scale: 1.1, y: -60, rotate: -24 }}
+              transition={{ type: "spring", stiffness: 60 }}
+              className="inline-block relative -top-20 left-24 -rotate-6 cursor-pointer"
+            >
+              <FaGithub size={92} />
+            </motion.div>
+            <motion.div 
+              initial={{rotate: 0}}
+              whileHover={{ scale: 1.1, y: -80, rotate: 24 }}
+              transition={{ type: "spring", stiffness: 60 }}
+              className="inline-block relative -top-24 left-14 rotate-8 cursor-pointer"
+            >
+              <IoLogoFigma size={92} color="#818181" />
+            </motion.div>
+            <motion.div
+              initial={{rotate: 0}}
+              whileHover={{ scale: 1.1, y: -60, rotate: -35 }}
+              transition={{ type: "spring", stiffness: 80 }}
+              className="inline-block relative -top-52 left-[18rem] cursor-pointer"
+            >
+              <DiAngularSimple size={106} color="#818181" />
+            </motion.div>
+            <motion.div 
+              initial={{rotate: 0}}
+              whileHover={{ scale: 1.1, y: -60, rotate: 18 }}
+              transition={{ type: "spring", stiffness: 80 }}
+              className="inline-block relative -top-48 left-40 -rotate-6 cursor-pointer"
+            >
+              <DiPython size={98} />
+            </motion.div>
+            {/* <motion.div 
+              whileHover={{ scale: 1.1, y: -10 }}
+              transition={{ type: "spring", stiffness: 300 }}
+              className="absolute top-10 left-48 -rotate-2 cursor-pointer z-20"
+            >
+              <FaGithub size={92} />
+            </motion.div>
+
+            <motion.div 
+              whileHover={{ scale: 1.1, y: -10 }}
+              transition={{ type: "spring", stiffness: 300 }}
+              className="absolute top-12 left-28 rotate-12 cursor-pointer z-30"
+            >
+              <FaJsSquare size={90} />
+            </motion.div>
+
+            <motion.div 
+              whileHover={{ scale: 1.1, y: -10 }}
+              transition={{ type: "spring", stiffness: 300 }}
+              className="absolute top-2 left-8 cursor-pointer z-20"
+            >
+              <FaReact size={118} />
+            </motion.div>
+            <motion.div 
+              whileHover={{ scale: 1.1, y: -10 }}
+              transition={{ type: "spring", stiffness: 300 }}
+              className="absolute top-6 left-56 -rotate-2 cursor-pointer z-20"
+              style={{ color: '#818181' }} // Estilo inline para cores específicas
+            >
+              <IoLogoFigma size={92} />
+            </motion.div>
+
+            <motion.div 
+              whileHover={{ scale: 1.1, y: -10 }}
+              transition={{ type: "spring", stiffness: 300 }}
+              className="absolute top-2 left-72 rotate-8 cursor-pointer z-20"
+              style={{ color: '#5f5f5f' }} // Estilo inline para cores específicas
+            >
+              <DiAngularSimple size={106} />
+            </motion.div>
+
+            <motion.div 
+              whileHover={{ scale: 1.1, y: -10, rotate: 12 }}
+              transition={{ type: "spring", stiffness: 300, rotate: 12 }}
+              className="absolute top-8 -left-8 rotate-12 cursor-pointer z-20"
+            >
+              <BiLogoPostgresql size={96} />
+            </motion.div>
+
+            <motion.div 
+              whileHover={{ scale: 1.1, y: -10 }}
+              transition={{ type: "spring", stiffness: 300 }}
+              className="absolute top-10 left-64 rotate-6 cursor-pointer z-20"
+            >
+              <DiPython size={98} />
+            </motion.div> */}
+          </div>
           <img 
-            className="absolute right-[21.85%] -top-[26.5%] z-30"
+            className="absolute right-[21.85%] -top-[11.5%] z-30 pointer-events-none"
             src="https://upcdn.io/W142ivu/raw/landing-page/bucket-top.png"
           />
           <img
-            className="absolute right-[20%] -top-[35%] pointer-events-none"
+            className="absolute right-[20%] -top-[20%] pointer-events-none"
             src="https://upcdn.io/W142ivu/raw/landing-page/bucket.png"
             alt=""
           />

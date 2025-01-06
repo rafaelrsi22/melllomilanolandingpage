@@ -1,52 +1,14 @@
 import { FaWandMagicSparkles } from "react-icons/fa6";
 
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import WhiteyButton from "../WhiteyButton";
 import StatusRadial from "../StatusRadial";
-import { AnimatePresence, motion } from "framer-motion";
-
-type AnchorUnderlinedProps = {
-  children: React.ReactNode;
-  href: string;
-}
-
-const AnchorUnderlined = ({
-  children,
-  href
-}: AnchorUnderlinedProps) => {
-  const [isHovering, setIsHovering] = useState<boolean>(false);
-
-  return (
-    <Link 
-      className="relative"
-      onMouseEnter={() => setIsHovering(true)}
-      onMouseLeave={() => setIsHovering(false)}
-      href={href}
-    >
-      {children}
-      <AnimatePresence>
-        {isHovering && (
-          <motion.div
-            initial={{opacity: 0}}
-            animate={{opacity: 0.5}}
-            exit={{opacity: 0}}
-            transition={{
-              duration: 0.2,
-              ease: "easeOut"
-            }}
-            className="absolute w-full h-0.5 bg-white"
-          />
-        )}
-      </AnimatePresence>
-    </Link>
-  );
-}
 
 export default function Header() {
   return (
-    <header className="flex items-center justify-between py-12 z-10 relative">
+    <header className="flex items-center justify-between py-12 z-20 relative">
       <Link
         href="/"
       >
@@ -60,14 +22,21 @@ export default function Header() {
       </Link>
       <ul className="flex items-center gap-16 text-sm select-none">
         <li>
-          <AnchorUnderlined href="#">
-            Portfolio
-          </AnchorUnderlined>
+          <div className="hover:scale-105 transition-all duration-150">
+            <Link 
+              className="transform" 
+              href="#"
+              >
+              Portfolio
+            </Link>
+          </div>
         </li>
         <li>
-          <AnchorUnderlined href="#">
-            Quem &nbsp;somos
-          </AnchorUnderlined>
+          <div className="hover:scale-105 transition-all duration-150">
+            <Link href="#">
+              Quem &nbsp;somos
+            </Link>
+          </div>
         </li>
         <li className="relative">
           <WhiteyButton Icon={FaWandMagicSparkles}>
