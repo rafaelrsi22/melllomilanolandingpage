@@ -2,6 +2,7 @@ import { FaWandMagicSparkles } from "react-icons/fa6";
 
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import WhiteyButton from "../WhiteyButton";
 import StatusRadial from "../StatusRadial";
 import { AnimatePresence, motion } from "framer-motion";
@@ -18,7 +19,7 @@ const AnchorUnderlined = ({
   const [isHovering, setIsHovering] = useState<boolean>(false);
 
   return (
-    <a 
+    <Link 
       className="relative"
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
@@ -39,14 +40,14 @@ const AnchorUnderlined = ({
           />
         )}
       </AnimatePresence>
-    </a>
+    </Link>
   );
 }
 
 export default function Header() {
   return (
     <header className="flex items-center justify-between py-12 z-10 relative">
-      <a
+      <Link
         href="/"
       >
         <Image 
@@ -56,7 +57,7 @@ export default function Header() {
           src="https://upcdn.io/W142ivu/raw/landing-page/logo.png" 
           alt="Mello & Milano Logo" 
         />
-      </a>
+      </Link>
       <ul className="flex items-center gap-16 text-sm select-none">
         <li>
           <AnchorUnderlined href="#">

@@ -6,9 +6,9 @@ import Header from "./components/Header";
 import Stars from "./components/Stars";
 import WhiteyButton from "./components/WhiteyButton";
 
-import { BiLogoPostgresql } from "react-icons/bi";
-import { FaReact, FaJsSquare } from "react-icons/fa";
-import { SiRedux } from "react-icons/si";
+// import { BiLogoPostgresql } from "react-icons/bi";
+// import { FaReact, FaJsSquare } from "react-icons/fa";
+// import { SiRedux } from "react-icons/si";
 
 export default function Home() {
   const [scale, setScale] = useState(1);
