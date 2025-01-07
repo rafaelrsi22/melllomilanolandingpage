@@ -8,6 +8,7 @@ import WhiteyButton from "./components/WhiteyButton";
 import MainBucket from "./components/MainBucket";
 import ToggleInput from "./components/ToggleInput";
 import { motion } from "framer-motion";
+import ScrollingText from "./components/ScrollingText";
 
 export default function Home() {
   const [scale, setScale] = useState(1);
@@ -156,11 +157,11 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="mt-64 h-36">
+            <div className="mt-52">
 
             </div>
           </div>
-          {/* bem aqui */}
+          <ScrollingText />
           <img 
             className="w-full"
             src="https://upcdn.io/W142ivu/raw/landing-page/bottom-black2.png" 
