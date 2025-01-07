@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React, { useState } from "react";
 import { IconType } from "react-icons";
 import { FaArrowRight } from "react-icons/fa";
@@ -5,16 +6,23 @@ import { FaArrowRight } from "react-icons/fa";
 type WhiteyButtonProps = {
   children?: React.ReactNode;
   Icon?: IconType;
+  animate?: boolean;
+  delay?: number;
 }
 
 export default function WhiteyButton({
   children,
-  Icon
+  Icon,
+  animate,
+  delay
 }: WhiteyButtonProps) {
   const [isHovering, setIsHovering] = useState<boolean>(false);
 
   return (
-    <button
+    <motion.button
+      initial={animate && {opacity: 0, x: -10}}
+      animate={{opacity: 1, x: 0}}
+      transition={{ease: "easeOut", duration: 1, delay}}
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
       className={`flex gap-1 items-center bg-white text-black font-bold py-1.5 px-2 rounded-full border-2 border-transparent hover:border-white hover:bg-black hover:text-white transition-all duration-200 select-none ps-4`}
@@ -26,6 +34,6 @@ export default function WhiteyButton({
         {children}
       </span>
       <FaArrowRight size={12} className={`${isHovering ? 'opacity-100' : 'opacity-0 translate-x-[5px]'} transiiton-all duration-300`} />
-    </button>
+    </motion.button>
   );  
 }

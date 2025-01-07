@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { FaWandMagicSparkles } from "react-icons/fa6";
 
 import React from "react";
@@ -7,9 +8,14 @@ import WhiteyButton from "../WhiteyButton";
 import StatusRadial from "../StatusRadial";
 
 export default function Header() {
+  const MotionLink = motion.create(Link);
+
   return (
     <header className="flex items-center justify-between py-12 z-20 relative">
-      <Link
+      <MotionLink
+        initial={{scale: 0, rotate: -35}}
+        animate={{scale: 1, rotate: 0}}
+        transition={{type: "spring", stiffness: 200}}
         href="/"
       >
         <Image 
@@ -19,9 +25,13 @@ export default function Header() {
           src="https://upcdn.io/W142ivu/raw/landing-page/logo.png" 
           alt="Mello & Milano Logo" 
         />
-      </Link>
+      </MotionLink>
       <ul className="flex items-center gap-16 text-sm select-none">
-        <li>
+        <motion.li
+          initial={{opacity: 0, y: -10}}
+          animate={{opacity: 1, y: 0}}
+          transition={{duration: 1, ease: "easeOut"}}
+        >
           <div className="hover:scale-105 transition-all duration-150">
             <Link 
               className="transform" 
@@ -30,15 +40,23 @@ export default function Header() {
               Portfolio
             </Link>
           </div>
-        </li>
-        <li>
+        </motion.li>
+        <motion.li
+          initial={{opacity: 0, y: -10}}
+          animate={{opacity: 1, y: 0}}
+          transition={{duration: 1, ease: "easeOut", delay: 0.2}}
+        >
           <div className="hover:scale-105 transition-all duration-150">
             <Link href="#">
               Quem &nbsp;somos
             </Link>
           </div>
-        </li>
-        <li className="relative">
+        </motion.li>
+        <motion.li className="relative"
+          initial={{opacity: 0, y: -10}}
+          animate={{opacity: 1, y: 0}}
+          transition={{duration: 1, ease: "easeOut", delay: 0.4}}
+        >
           <WhiteyButton Icon={FaWandMagicSparkles}>
             Contrate-nos
           </WhiteyButton>
@@ -46,7 +64,7 @@ export default function Header() {
             <p className="mona-sans text-xs">3 Client Slot Open</p>
             <StatusRadial />
           </div>
-        </li>
+        </motion.li>
       </ul>
     </header>
   );
