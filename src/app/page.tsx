@@ -8,7 +8,6 @@ import WhiteyButton from "./components/WhiteyButton";
 import MainBucket from "./components/MainBucket";
 import ToggleInput from "./components/ToggleInput";
 import { motion } from "framer-motion";
-import SmoothScrollProvider from "./components/SmoothScrollProvider";
 
 export default function Home() {
   const [scale, setScale] = useState(1);
@@ -26,7 +25,7 @@ export default function Home() {
   }, []);
 
   return (
-    <SmoothScrollProvider>
+    <div>
       <div className="px-64">
         <Header />
         <Stars numberOfStars={1500} />
@@ -171,6 +170,6 @@ export default function Home() {
       <div className="w-screen h-36 bg-[#030306]">
 
       </div>
-    </SmoothScrollProvider>
+    </div>
   );
 }
