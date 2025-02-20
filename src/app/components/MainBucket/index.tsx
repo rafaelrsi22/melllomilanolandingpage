@@ -76,7 +76,7 @@ export default function MainBucket({
           animate={{opacity: 1}}
           transition={{duration: 1.5, delay: 1, ease: "easeInOut"}}
           className="absolute right-[15%] -top-[45%] pointer-events-none"
-          src="https://upcdn.io/W142ivu/raw/landing-page/small-glow.png"
+          src="/images/small-glow.png"
           alt=""
         />
         <motion.img
@@ -84,13 +84,13 @@ export default function MainBucket({
           animate={{opacity: 1}}
           transition={{duration: 1.5, delay: 0.5, ease: "easeInOut"}}
           className="absolute -top-[95%] -right-[4.5%] pointer-events-none"
-          src="https://upcdn.io/W142ivu/raw/landing-page/glow-ring.png"
+          src="/images/glow-ring.png"
           alt=""
         />
       </div>
       <img
         className="relative z-20"
-        src="https://upcdn.io/W142ivu/raw/landing-page/bottom-line.png"
+        src="/images/bottom-line.png"
         alt=""
       />
       <motion.div
@@ -193,11 +193,11 @@ export default function MainBucket({
         </div>
         <img 
           className="absolute right-[22%] -top-[12.5%] z-30 pointer-events-none"
-          src="https://upcdn.io/W142ivu/raw/landing-page/bucket-top.png"
+          src="/images/bucket-top.png"
         />
         <img
           className="absolute right-[20%] -top-[20%] pointer-events-none"
-          src="https://upcdn.io/W142ivu/raw/landing-page/bucket.png"
+          src="/images/bucket.png"
           alt=""
         />
       </motion.div>

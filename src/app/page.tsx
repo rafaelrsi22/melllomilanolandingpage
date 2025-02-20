@@ -67,21 +67,21 @@ export default function Home() {
                   width={35}
                   height={35}
                   className="border-2 border-white rounded-full z-30"
-                  src="https://upcdn.io/W142ivu/raw/landing-page/placeholder-usr-3.png"
+                  src="/images/placeholder-usr-3.png"
                 />
                 <Image
                   alt="placeholder user image 2"
                   width={35}
                   height={35}
                   className="border-2 border-white rounded-full z-20 -ml-5"
-                  src="https://upcdn.io/W142ivu/raw/landing-page/placeholder-usr-2.png"
+                  src="/images/placeholder-usr-2.png"
                 />
                 <Image
                   alt="placeholder user image 1"
                   width={35}
                   height={35}
                   className="border-2 border-white rounded-full z-10 -ml-5"
-                  src="https://upcdn.io/W142ivu/raw/landing-page/placeholder-usr-1.png"
+                  src="/images/placeholder-usr-1.png"
                 />
               </div>
               <p className="text-white/60">Mais de 50 clientes satisfeitos.</p>
@@ -96,7 +96,7 @@ export default function Home() {
         <MainBucket scale={scale} />
         <div className="bg-[#07080D] h-full -mt-2 z-20 relative w-full">
           <img
-            src={workWithUsToggled ? "https://upcdn.io/W142ivu/raw/landing-page/greenborder.png" : "https://upcdn.io/W142ivu/raw/landing-page/redborder.png"}
+            src={workWithUsToggled ? "/images/greenborder.png" : "/images/redborder.png"}
             className="w-full h-full pointer-events-none opacity-gradient absolute"
             style={{
               maskImage: 'linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 100%)',
@@ -120,19 +120,19 @@ export default function Home() {
                 <div className="flex-1">
                   <img
                     className="w-full"
-                    src="https://upcdn.io/W142ivu/raw/landing-page/dashedsquare.png"
+                    src="/images/dashedsquare.png"
                   />
                 </div>
                 <div className="flex-1">
                   <img 
                     className="w-full"  
-                    src="https://upcdn.io/W142ivu/raw/landing-page/dashedsquare.png"
+                    src="/images/dashedsquare.png"
                   />
                 </div>
                 <div className="flex-1">
                   <img 
                     className="w-full"
-                    src="https://upcdn.io/W142ivu/raw/landing-page/dashedsquare.png"
+                    src="/images/dashedsquare.png"
                   />
                 </div>
               </div>
@@ -140,19 +140,19 @@ export default function Home() {
                 <div className="flex-1">
                   <img
                     className="w-full"
-                    src="https://upcdn.io/W142ivu/raw/landing-page/dashedsquare.png"
+                    src="/images/dashedsquare.png"
                   />
                 </div>
                 <div className="flex-1">
                   <img 
                     className="w-full"  
-                    src="https://upcdn.io/W142ivu/raw/landing-page/dashedsquare.png"
+                    src="/images/dashedsquare.png"
                   />
                 </div>
                 <div className="flex-1">
                   <img 
                     className="w-full"
-                    src="https://upcdn.io/W142ivu/raw/landing-page/dashedsquare.png"
+                    src="/images/dashedsquare.png"
                   />
                 </div>
               </div>
@@ -164,7 +164,7 @@ export default function Home() {
           <ScrollingText />
           <img 
             className="w-full"
-            src="https://upcdn.io/W142ivu/raw/landing-page/bottom-black2.png" 
+            src="/images/bottom-black2.png" 
           />
         </div>
       </div>

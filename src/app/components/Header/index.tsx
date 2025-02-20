@@ -18,13 +18,13 @@ export default function Header() {
         transition={{type: "spring", stiffness: 200}}
         href="/"
       >
-        <Image 
-          width={40}
-          height={40}
-          className="hover:scale-105 transition-all duration-300"
-          src="https://upcdn.io/W142ivu/raw/landing-page/logo.png" 
-          alt="Mello & Milano Logo" 
-        />
+      <Image 
+        width={40}
+        height={40}
+        className="hover:scale-105 transition-all duration-300"
+        src="/images/logo.png" 
+        alt="Mello & Milano Logo" 
+      />
       </MotionLink>
       <ul className="flex items-center gap-16 text-sm select-none">
         <motion.li
